@@ -1,0 +1,117 @@
+// hastens-codes.h
+//
+// Codes for Hästens motorized bed IR controller
+// Positions A-B-C are of remote controller slide positions
+//
+// 3.3.2021 / Risto Helkiö
+
+// POSITION A
+#define A_FLAT            0X2AC00   // "10 1010 1100 0000 0000"
+#define A_HEAD_UP         0X3ACC0   // "11 1010 1100 1100 0000"
+#define A_HEAD_DOWN       0X3AC30   // "11 1010 1100 0011 0000"
+#define A_LEGS_UP         0X3AC0C   // "11 1010 1100 0000 1100"
+#define A_LEGS_DOWN       0X3AC03   // "11 1010 1100 0000 0011"
+#define A_HEADSHAKE_1     0X2BCC0   // "10 1011 1100 1100 0000"
+#define A_HEADSHAKE_2     0X2BC30   // "10 1011 1100 0011 0000"
+#define A_HEADSHAKE_3     0X2BC0C   // "10 1011 1100 0000 1100"
+#define A_HEADSHAKE_OFF   0X2BC03   // "10 1011 1100 0000 0011"
+#define A_LEGSSHAKE_1     0X2ECC0   // "10 1110 1100 1100 0000"
+#define A_LEGSSHAKE_2     0X2EC30   // "10 1110 1100 0011 0000"
+#define A_LEGSSHAKE_3     0X2EC0C   // "10 1110 1100 0000 1100"
+#define A_LEGSSHAKE_OFF   0X2EC03   // "10 1110 1100 0000 0011"
+// POSITION B
+#define B_FLAT            0X2A100   // "10 1010 1000 0000 0000";
+#define B_HEAD_UP         0X3A1C0   // "11 1010 1000 1100 0000";
+#define B_HEAD_DOWN       0X3A130   // "11 1010 1000 0011 0000";
+#define B_LEGS_UP         0X3A10C   // "11 1010 1000 0000 1100";
+#define B_LEGS_DOWN       0X3A103   // "11 1010 1000 0000 0011";
+#define B_HEADSHAKE_1     0X2B1C0   // "10 1011 1000 1100 0000";
+#define B_HEADSHAKE_2     0X2B130   // "10 1011 1000 0011 0000";
+#define B_HEADSHAKE_3     0X2B10C   // "10 1011 1000 0000 1100";
+#define B_HEADSHAKE_OFF   0X2B103   // "10 1011 1000 0000 0011";
+#define B_LEGSSHAKE_1     0X2E1C0   // "10 1110 1000 1100 0000";
+#define B_LEGSSHAKE_2     0X2E130   // "10 1110 1000 0011 0000";
+#define B_LEGSSHAKE_3     0X2E10C   // "10 1110 1000 0000 1100";
+#define B_LEGSSHAKE_OFF   0X2E103   // "10 1110 1000 0000 0011";
+// POSITION C
+#define C_FLAT            0X2A000   // "10 1010 0000 0000 0000";
+
+//#define C_FLAT            0X2A0C0   // "10 1010 0000 1100 0000";
+//#define C_FLAT            0X2A030   // "10 1010 0000 0011 0000";
+//#define C_FLAT            0X2A00C   // "10 1010 0000 0000 1100";
+//#define C_FLAT            0X2A003   // "10 1010 0000 0000 0011";
+
+#define C_HEAD_UP         0X3A0C0   // "11 1010 0000 1100 0000";
+#define C_HEAD_DOWN       0X3A030   // "11 1010 0000 0011 0000";
+#define C_LEGS_UP         0X3A00C   // "11 1010 0000 0000 1100"
+#define C_LEGS_DOWN       0X3A003   // "11 1010 0000 0000 0011"
+#define C_HEADSHAKE_1     0X2B0C0   // "10 1011 0000 1100 0000";
+#define C_HEADSHAKE_2     0X2B030   // "10 1011 0000 0011 0000";
+#define C_HEADSHAKE_3     0X2B00C   // "10 1011 0000 0000 1100";
+#define C_HEADSHAKE_OFF   0X2B003   // "10 1011 0000 0000 0011";
+#define C_LEGSSHAKE_1     0X2E0C0   // "10 1110 0000 1100 0000";
+#define C_LEGSSHAKE_2     0X2E030   // "10 1110 0000 0011 0000";
+#define C_LEGSSHAKE_3     0X2E00C   // "10 1110 0000 0000 1100";
+#define C_LEGSSHAKE_OFF   0X2E003   // "10 1110 0000 0000 0011";
+
+// indexes to arrays
+#define FLAT            0
+#define HEAD_UP         1
+#define HEAD_DOWN       2
+#define LEGS_UP         3
+#define LEGS_DOWN       4
+#define HEADSHAKE_1     5
+#define HEADSHAKE_2     6
+#define HEADSHAKE_3     7
+#define HEADSHAKE_OFF   8
+#define LEGSSHAKE_1     9
+#define LEGSSHAKE_2     10
+#define LEGSSHAKE_3     11
+#define LEGSSHAKE_OFF   12
+
+// code arrays
+uint32_t a_codes[] = {
+  A_FLAT,
+  A_HEAD_UP,
+  A_HEAD_DOWN,
+  A_LEGS_UP,
+  A_LEGS_DOWN,
+  A_HEADSHAKE_1,
+  A_HEADSHAKE_2,
+  A_HEADSHAKE_3,
+  A_HEADSHAKE_OFF,
+  A_LEGSSHAKE_1,
+  A_LEGSSHAKE_2,
+  A_LEGSSHAKE_3,
+  A_LEGSSHAKE_OFF,
+};
+uint32_t b_codes[] = {
+  B_FLAT,
+  B_HEAD_UP,
+  B_HEAD_DOWN,
+  B_LEGS_UP,
+  B_LEGS_DOWN,
+  B_HEADSHAKE_1,
+  B_HEADSHAKE_2,
+  B_HEADSHAKE_3,
+  B_HEADSHAKE_OFF,
+  B_LEGSSHAKE_1,
+  B_LEGSSHAKE_2,
+  B_LEGSSHAKE_3,
+  B_LEGSSHAKE_OFF,
+};
+uint32_t c_codes[] = {
+  C_FLAT,
+  C_HEAD_UP,
+  C_HEAD_DOWN,
+  C_LEGS_UP,
+  C_LEGS_DOWN,
+  C_HEADSHAKE_1,
+  C_HEADSHAKE_2,
+  C_HEADSHAKE_3,
+  C_HEADSHAKE_OFF,
+  C_LEGSSHAKE_1,
+  C_LEGSSHAKE_2,
+  C_LEGSSHAKE_3,
+  C_LEGSSHAKE_OFF,
+};
