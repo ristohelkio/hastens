@@ -16,3 +16,9 @@ Laajennus Adafruit Circuit Playground Express IRLib2 -kirjastoon infrapunakoodie
 
 Alkuperäisen kauko-ohjaimen testaaminen ir-protokollan selvittämiseksi.
 
+
+### Raspberry Pi Pico
+
+Lisäksi kokeilin USB host modea Raspberry Pi Picolla. Kokeilut löytyy hakemistosta
+
+`/Users/ristohelkio/Documents/sw/pico`
