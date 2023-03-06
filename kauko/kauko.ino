@@ -8,6 +8,11 @@
   Board: Arduino SAMD (32-bits ARM Cortex-M0+) Boards -> Adafruit Circuit Playground Express
   Port: /dev/cu.usbmodem1432401 (Adafruit Circuit Playground Express)
 
+  Ohjelmointi/lataus MACilla:
+  Programmel: ATMEL EDBG
+  Jos lataus kortille ei onnistu, niin paina kaksi kertaa reset-nappulaa
+
+
   example:
   https://learn.adafruit.com/infrared-transmit-and-receive-on-circuit-playground-express-in-c-plus-plus-2
 
@@ -99,26 +104,31 @@ void setup() {
 }
 
 void set_pixels(){
+  //#ifdef _debug
+  //  Serial.println("set_pixels");
+  //  Serial.println(current_mode);
+  //#endif
+  
   CircuitPlayground.clearPixels();
   uint32_t color = 0x101010;
   switch(current_mode) {
     case HEAD:
-      CircuitPlayground.strip.setPixelColor((current_position) ? 0 : 9, color);
+    CircuitPlayground.strip.setPixelColor((current_position) ? 0 : 0, color);
       break;
     case HEAD_SHAKING:
       if (current_head_speed == SLOW)   color = CircuitPlayground.colorWheel(40);
       if (current_head_speed == MEDIUM) color = CircuitPlayground.colorWheel(25);
       if (current_head_speed == FAST)   color = CircuitPlayground.colorWheel(10);
-      CircuitPlayground.strip.setPixelColor((current_position) ? 1 : 8, color);
+      CircuitPlayground.strip.setPixelColor((current_position) ? 1 : 1, color);
       break;
     case LEGS_SHAKING:
       if (current_legs_speed == SLOW)   color = CircuitPlayground.colorWheel(40);
       if (current_legs_speed == MEDIUM) color = CircuitPlayground.colorWheel(25);
       if (current_legs_speed == FAST)   color = CircuitPlayground.colorWheel(10);
-      CircuitPlayground.strip.setPixelColor((current_position) ? 3 : 6, color);
+      CircuitPlayground.strip.setPixelColor((current_position) ? 3 : 3, color);
       break;
     case LEGS:
-      CircuitPlayground.strip.setPixelColor((current_position) ? 4 : 5, color);
+    CircuitPlayground.strip.setPixelColor((current_position) ? 4 : 4, color);
       break;
   }
   CircuitPlayground.strip.show();
